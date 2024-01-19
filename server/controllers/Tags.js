@@ -35,3 +35,10 @@ exports.createTag = async (req, res) => {
     }
 
 }
+
+for(int i=0;i<a.length;i++{
+    if(1<= quantity.get(need.get(i)-1)){
+        count++;
+        quantity.set(need.get(i)-1, quantity.get(need.get(i)-1)-1);
+    }
+}
