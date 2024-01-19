@@ -1,0 +1,52 @@
+/* Custom styles to adjust the size of the day cells */
+.fc-daygrid {
+    margin-top: 0px;
+    width: 100%;
+    height: 80%;
+    /* padding: 0px; */
+}
+
+
+/* Custom styles to decrease the size of the day cells */
+.fc-daygrid-day {
+    width: 10px;
+    height: 10px;
+}
+
+
+.calenderDiv {
+    max-width: 800px;
+    max-height: 550px;
+}
+
+/* .active{
+    color: white;
+} */
+
+
+/* .fc-day {
+    height: 20px;
+} */
+
+/* .fc-daygrid-day-frame {
+    min-height: 0%;
+    width: 10px;
+    height: 10px;
+} */
+
+/* .fc-daygrid-day-number {
+    margin: 0;
+    padding: 0;
+} */
+    
+/* .fc-daygrid-day-frame {
+    width: 100%;
+    height: 70%;
+} */
+
+/* .fc-daygrid-week-number {
+    position: absolute;
+    min-width: 0em;
+    text-align: center;
+  } */
+

@@ -1,0 +1,20 @@
+input{
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    height: 9%;
+    font-weight: normal;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    width: 100%;
+    background-color: transparent;
+}
+
+/* For Chrome, Safari, and Edge */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
