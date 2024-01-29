@@ -49,11 +49,61 @@ exports.createCourse = async (req, res) =>{
             courseName,
             courseDescription,
             instructor: instructorDetails._id,
-            
-        })
+            whatYouWillLearn: whatYouWillLearn,
+            price,
+            tag: tagDetails._id,
+            thumbnail: thumbnailImage.secure_url,
+        });
+
+        //add  the new course to the user schema of instructor
+
+        await User.findByIdAndUpdate(
+            {_id: instructorDetails._id},
+            {
+                $push:{
+                    courses: newCourse._id,
+                }
+            },
+            {new: true},
+        );
+
+        //update the Tag ka schema
+        //TODO: HW
+
+        //return respoense
+        return res.status(500).json({
+            success: true,
+            message: "Course created successfully",
+            data: newCourse,
+        });
+
     } catch (error) {
-        
+        console.error(error);
+        return res.status(500).json({
+            success: false,
+            message: "Failed to create Course",
+            error: error.message,
+        });
     }
 }
 
 //getAllCourses handler function 
+
+exports.showAllCourses = async (req, res) => {
+    try {
+        const allCourses = await Course.find({})
+
+            return res.status(200).json({
+                success: true,
+                message: "Data for all courses fetched succesfully",
+                data: allCourses,
+            })
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({
+            success: false,
+            message: "Cannot fetch course data",
+            error: error.message,
+        })
+    }
+}
