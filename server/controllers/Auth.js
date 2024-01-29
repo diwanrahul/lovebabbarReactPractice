@@ -238,3 +238,12 @@ exports.login = async (req, res) => {
 };
 
 //change password
+exports.changePassword = async (req, res) => {
+    //get data froom req body
+    //get oldPassword, newPassword, confirmNewPassword
+    //validation
+
+    //update pwd in DB
+    //send mail- password updated
+    //return response
+}

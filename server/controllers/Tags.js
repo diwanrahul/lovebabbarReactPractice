@@ -34,11 +34,21 @@ exports.createTag = async (req, res) => {
         })
     }
 
-}
+};
 
-for(int i=0;i<a.length;i++{
-    if(1<= quantity.get(need.get(i)-1)){
-        count++;
-        quantity.set(need.get(i)-1, quantity.get(need.get(i)-1)-1);
-    }
-}
+//getAllTags handler function
+
+ try {
+    const allTags = await Tag.find({}, {name:true, description:true});
+    res.status(200).json({
+        success: true,
+        message:"All tags returned successfully",
+        allTags,
+    })
+ } catch (error) {
+    return res.status(500).json({
+        success: false,
+        message: error.message,
+    })
+ }
+
