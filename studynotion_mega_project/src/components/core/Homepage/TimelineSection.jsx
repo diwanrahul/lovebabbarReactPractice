@@ -61,7 +61,7 @@ export default function TimelineSection() {
 
         <div className='relative shadow-blue-200 '>
           <img src={TimeLineImage} alt='timelineImage'
-          className='shadow-white object-cover h-fit' />
+          className='shadow-richblack-900 shadow-2xl object-cover h-fit' />
 
           <div className='absolute bg-caribbeangreen-700 flex text-white uppercase py-7 left-[50%] translate-x-[-50%] translate-y-[-50%]'>
             <div className='flex gap-5 items-center border-r border-caribbeangreen-300 px-7'>
