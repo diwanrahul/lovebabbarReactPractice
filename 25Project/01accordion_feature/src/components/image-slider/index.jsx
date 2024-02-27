@@ -1,66 +1,82 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
-import {BsArrowLeftCircleFill, BsArrowRightCircleFill} from "react-icons/bs"
-import { useEffect, useState } from "react";
-export default function ImageSlider ({url, limit=5, page=1}){
+import { useEffect, useState } from "react"
+import {BsArrowLeftCircleFill, BsArrowRightCircleFill} from 'react-icons/bs'
+import './style.css';
 
-    const [images, setImages] = useState([]);
-    const [currImage, setCurrImage] = useState(0);
-    const [error, setError] = useState("");
+export default function ImageSlider({url, page, limit})  {
 
-    const fetchImage= async (geturl)=>{
-        try {
-          const response = await fetch(`${geturl}?page=${page}&limit=${limit}`);
+    const [Images, setImages] = useState([]);
+    const [currentSlide, setCurrentSlide] = useState(0);
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(false);
 
-          const data = await response.json();
-          setImages(data);
-        } catch (error) {
-            setError("unable to fetch Image");
+    const fetchImages = async(getUrl) => {
+       try {
+        setLoading(true);
+        // console.log(getUrl);
+        const res = await fetch(`${getUrl}?page=${page}&limit=${limit}`);
+        const data = await res.json();
+        if(data){
+            setImages(data);
         }
+        setLoading(false); 
+        
+       } catch (error) {
+        console.error(error);
+        setLoading(false);   
+       }
     }
-    console.log(images);
     useEffect(()=>{
-    if(url)
-        fetchImage(url);
-
-    },[url])
-
-    const handleLeftImageSlider = (id) => {
-        id+=1;
-        setCurrImage(images[id].download_url);
+        if(url !== "") fetchImages(url);
+    },[url]);
+console.log(Images);
+    if(loading){
+        return <div>Loading data! Please wait</div>
     }
-    const handleRightImageSlider = (id) => {
-        id-=1;
-        setCurrImage(images[id].download_url);
+
+    if(error !== null){
+        return <div>Error Occured</div>
     }
-    return(
-        <div className="flex justify-center items-center w-10/12 h-11">
-            <BsArrowLeftCircleFill  onClick={()=>handleRightImageSlider()}/>
+
+    const handlePrevious = () =>{
+setCurrentSlide(currentSlide === 0 ? Images.length-1 : currentSlide-1);
+    }
+
+    const handleNext = () =>{
+setCurrentSlide(currentSlide === Images.length-1 ? 0 : currentSlide+1);
+    }
+     return (
+        <div className="container">
+            <BsArrowLeftCircleFill 
+            onClick={handlePrevious}
+            className="arrow arrow-left"/>
             {
-               images && images.length 
-               ? images.map((image)=>(
+                Images && Images.length 
+                ? Images.map((imageItem, index)=>(
                     <img 
-                     key={image.id}
-                     src={image.download_url}
-                     alt={image.download_url}
-                      />
+                    key={imageItem.id}
+                    src={imageItem.download_url} 
+                    alt={imageItem.download_url} 
+                    className={currentSlide === index ? "current-image" 
+                    : "current-image hide-current-image"}
+                    />
                 ))
                 : null
             }
-
-            <BsArrowRightCircleFill onClick={handleLeftImageSlider} />
-            <span>
-                
+            <BsArrowRightCircleFill
+            onClick={handleNext} className="arrow arrow-right"/>
+            <span className="circle-indicators">
             {
-                images && images.length 
-                ? images.map((_, index)=>(
-                    <button key={index}>
-
-                    </button>
+                Images && Images.length
+                ? Images.map((_, index)=>(
+                    <button 
+                    onClick={()=>setCurrentSlide(index)}
+                    key={index}
+                    className={currentSlide === index
+                        ? "current-indicator"
+                    : " current-indicator hide-current-indicator"} ></button>
                 ))
-                : null
-            }
-            </span>
+                :null
+            }</span>
         </div>
-    )
+     )
 }
