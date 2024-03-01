@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // import { useState } from 'react'
 import Accordion from "./components/accordion/Accordion"
 import ImageSlider from "./components/image-slider"
@@ -11,6 +12,9 @@ import LightDarkTheme from "./components/light-dark-theme"
 import ScrollIndicator from "./components/scroll-indicator"
 import TabTest from "./components/custom-tabs/tab-test"
 import ModalTest from "./components/custom-modal-popup/modal-test"
+import GithubProfileFinder from "./components/github-profile-finder"
+import SearchAutocomplete from "./components/search-autocomplete"
+import TikTacToe from "./components/tik-tak-toe"
 function App() {
   const url = "https://picsum.photos/v2/list";
 
@@ -48,8 +52,18 @@ function App() {
 
 
        {/* custom modal components */}
-       <ModalTest />
+       {/* <ModalTest /> */}
 
+       {/* github profile GithubProfileFinder */}
+
+       {/* <GithubProfileFinder /> */}
+
+        {/* searchn functionaliy */}
+        {/* <SearchAutocomplete /> */}
+
+
+        {/* tiktaktoe game */}
+        <TikTacToe />
     </>
   )
 }
