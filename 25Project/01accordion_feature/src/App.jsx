@@ -17,6 +17,8 @@ import SearchAutocomplete from "./components/search-autocomplete"
 import TikTacToe from "./components/tik-tak-toe"
 import UseFetchHookTest from "./components/use-fetch/test"
 import UseWindowResizeTest from "./components/use-windowsize/test"
+import ScrollToSection from "./components/scroll-to-top-bottom"
+import Weather from "./components/weather-app/Weather"
 function App() {
   const url = "https://picsum.photos/v2/list";
 
@@ -72,7 +74,15 @@ function App() {
         {/* <UseFetchHookTest /> */}
 
         {/* window resize hook */}
-        <UseWindowResizeTest />
+        {/* <UseWindowResizeTest /> */}
+
+        {/* scroll to a section */}
+        {/* <ScrollToSection /> */}
+
+        {/* Weather app */}
+        <Weather /> 
+
+
     </>
   )
 }
