@@ -15,6 +15,8 @@ import ModalTest from "./components/custom-modal-popup/modal-test"
 import GithubProfileFinder from "./components/github-profile-finder"
 import SearchAutocomplete from "./components/search-autocomplete"
 import TikTacToe from "./components/tik-tak-toe"
+import UseFetchHookTest from "./components/use-fetch/test"
+import UseWindowResizeTest from "./components/use-windowsize/test"
 function App() {
   const url = "https://picsum.photos/v2/list";
 
@@ -63,7 +65,14 @@ function App() {
 
 
         {/* tiktaktoe game */}
-        <TikTacToe />
+        {/* <TikTacToe /> */}
+
+
+        {/* custom hooks */}
+        {/* <UseFetchHookTest /> */}
+
+        {/* window resize hook */}
+        <UseWindowResizeTest />
     </>
   )
 }
