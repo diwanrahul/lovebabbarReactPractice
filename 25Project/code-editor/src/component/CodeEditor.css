@@ -30,6 +30,7 @@
 }
 
 .code-output{
+    font-size: 50px;
     height: 100%;
     z-index: 2;
 }

@@ -22,6 +22,7 @@ const CodeEditor = () => {
         </textarea> <SyntaxHighlighter
             language="javascript"
             style={dark}
+            // style={{dark, fontSize:"50px"}}
             className="code-output"
           >
             {code}
