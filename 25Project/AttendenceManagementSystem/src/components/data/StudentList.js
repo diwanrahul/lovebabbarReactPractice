@@ -1,0 +1,22 @@
+export const studentList = [
+    {
+        roll:0,
+        name:"Rahul",
+        isPresent:false,
+    },
+    {
+        roll:1,
+        name:"Rahul",
+        isPresent:true,
+    },
+    {
+        roll:2,
+        name:"Rahul",
+        isPresent:false,
+    },
+    {
+        roll:3,
+        name:"Rahul",
+        isPresent:true,
+    },
+]
