@@ -70,7 +70,7 @@ const Technology = () => {
     }, []);
 
   return (
-    <div className='h-[11/12] bg-white relative'>
+    <div className='h-[11/12] bg-white relative '>
          
         <div className='bg-blu-500 gap-5 flex justify-center'>
             {

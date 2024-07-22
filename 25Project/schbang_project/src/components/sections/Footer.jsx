@@ -5,7 +5,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { IoLogoYoutube } from "react-icons/io";
 const Footer = () => {
   return (
-    <div className="bg-black h-screen text-white relative bg-fixed">
+    <div className="bg-black h-screen text-white absolute b-0 w-full bg-fi">
       <div>
         <h1 className="text-[20rem] font-bold tracking-[-0.12em] text-center ">Schbang</h1>
       </div>

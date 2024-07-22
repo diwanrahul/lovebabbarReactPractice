@@ -1,8 +1,11 @@
 import React from 'react'
 
 const Header = () => {
+  const customCursorStyle = {
+    cursor: 'url(https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/48/external-glyph-travel-tanah-basah-glyph-tanah-basah-56.png), auto'
+};
   return (
-    <div 
+    <div style={customCursorStyle}
     // className='h-screen bg-gradient-to-r from-violet-500 to-fuchsia-500 bg-fixed flex items-center  '
     className='w-screen h-screen flex items-center  '
     >

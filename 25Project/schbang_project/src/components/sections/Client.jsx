@@ -43,11 +43,18 @@ const Client = () => {
       logo: "https://upload.wikimedia.org/wikipedia/commons/7/77/Cisco_logo.svg",
     },
   ];
-
+  const myStyle = {
+    zIndex: 158,
+   boxShadow:" 2em 1em  .9em white",
+    backgroundImage: 'linear-gradient(90deg, #aaa 7%, rgba(0, 0, 0, 0) 53%, #aaa 90%)',
+    webkitFilter: "grayscale(100%)",
+    filter: "grayscale(100%)"
+};
   return (
-    <div className=" px-[10rem]  h-[50vh] bg-re-500 flex flex-col items-center relative bg-white">
-      <marquee style={{ color: "red", fontSize: "3em" }}>
-        <div className="flex gap-5 mt-10">
+    <div style={myStyle} 
+     className="px-[2rem]  h-[25vh] bg-re-500 flex flex-col  gap-5 items-center relative bg-white ">
+      <marquee >
+        <div className="flex gap-5 bg-re-400 mt-10">
           {itCompanies.map((item) => (
             <img className="h-10" src={item.logo} key={item.logo} alt="logo" />
           ))}
@@ -57,7 +64,7 @@ const Client = () => {
         
         direction="right"
        
-        style={{ color: "red", fontSize: "3em" }}
+        style={{ color: "red", fontSize: "3em" , boxShadow:"inset 1em 1em 2em slate " }}
       >
         <div className="flex gap-5">
           {itCompanies.map((item) => (
