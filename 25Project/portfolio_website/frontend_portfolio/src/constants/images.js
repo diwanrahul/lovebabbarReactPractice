@@ -34,8 +34,14 @@ import bolt from '../assets/bolt.png';
 import nb from '../assets/nb.png';
 import skype from '../assets/skype.png';
 import spotify from '../assets/spotify.png';
+import java from "../assets/java.png"
+import profile1 from "../assets/profile1.png"
+import profile2 from "../assets/profile2.png"
 
 export default {
+  profile1, 
+  profile2, 
+  java,
   email,
   mobile,
   api,

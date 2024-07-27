@@ -1,17 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
 import "./Navbar.scss";
 import { Images } from "../../constants";
-const Navbar = () => {
+
+const Navbar = ({ isDarkMode, setIsDarkMode }) => {
   const [toggle, setToggle] = useState(false);
+
+  useEffect(() => {
+    const navElement = document.querySelector("nav");
+    if (isDarkMode) {
+      navElement.style.backgroundColor = "#212121";
+      navElement.style.color = "#fff";
+    } else {
+      navElement.style.backgroundColor = "";
+    }
+  }, [isDarkMode]);
+
   return (
     <nav className="app__navbar">
-      <div className="app__navbar-logo " >
+      <div className="app__navbar-logo">
         <img src={Images.logo} alt="logo" />
       </div>
-      <ul className="app__navbar-links ">
-        {["Home", "About", "Skills", "Contacts", "Work"].map((item) => (
+      <ul className="app__navbar-links">
+        {["Home", "About", "Work", "Skills", "Contacts"].map((item) => (
           <li key={`link-${item}`} className="app__flex p-text">
             <a href={`#${item}`}>{item}</a>
           </li>
@@ -26,7 +38,7 @@ const Navbar = () => {
           >
             <HiX onClick={() => setToggle(false)} />
             <ul>
-              {["Home", "About", "Skills", "Contacts", "Work"].map((item) => (
+              {["Home", "About", "Work", "Skills", "Contacts"].map((item) => (
                 <li key={item}>
                   <a href={`#${item}`} onClick={() => setToggle(false)}>
                     {item}
@@ -37,6 +49,12 @@ const Navbar = () => {
           </motion.div>
         )}
       </div>
+      <button 
+        onClick={() => setIsDarkMode(!isDarkMode)} 
+        className="dark-mode-toggle"
+      >
+        {isDarkMode ? 'Light' : 'Dark'}
+      </button>
     </nav>
   );
 };
