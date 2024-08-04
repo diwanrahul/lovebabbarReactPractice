@@ -3,17 +3,23 @@ import { motion } from "framer-motion";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
 import "./Navbar.scss";
 import { Images } from "../../constants";
+import { useSelector, useDispatch } from "react-redux";
+import { setDarkMode } from "../../features/DarkmodeSlice"; // Ensure correct path
+import { MdDarkMode } from "react-icons/md";
+import { MdOutlineDarkMode } from "react-icons/md";
 
-const Navbar = ({ isDarkMode, setIsDarkMode }) => {
+const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+  const dispatch = useDispatch();
+  const isDarkMode = useSelector((state) => state.darkmode.isDarkMode);
 
   useEffect(() => {
-    const navElement = document.querySelector("nav");
+    const homeElement = document.querySelector("nav");
     if (isDarkMode) {
-      navElement.style.backgroundColor = "#212121";
-      navElement.style.color = "#fff";
+      homeElement.style.background = "#212121";
+      homeElement.style.color = "#fff";
     } else {
-      navElement.style.backgroundColor = "";
+      homeElement.style.background = "";
     }
   }, [isDarkMode]);
 
@@ -49,12 +55,24 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
           </motion.div>
         )}
       </div>
-      <button 
-        onClick={() => setIsDarkMode(!isDarkMode)} 
-        className="dark-mode-toggle"
-      >
-        {isDarkMode ? 'Light' : 'Dark'}
-      </button>
+     {
+      !isDarkMode 
+        ? <MdDarkMode style={
+          {
+            color:"black",
+            fontSize:"25",
+            cursor:"pointer"
+          }
+        } onClick={() => dispatch(setDarkMode(!isDarkMode))} /> 
+        : <MdOutlineDarkMode
+        style={
+          {
+            color:"white",
+            fontSize:"25",
+            cursor:"pointer"
+          }
+        } onClick={() => dispatch(setDarkMode(!isDarkMode))} />
+     }
     </nav>
   );
 };

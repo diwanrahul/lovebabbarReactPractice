@@ -6,12 +6,24 @@ import { AppWrap, MotionWrap } from '../../wrapper';
 // Import images statically
 import Images from '../../constants/images'; // Assuming you have a constants folder with an images file
 import './Work.scss';
+import { useSelector } from 'react-redux';
 
 const Work = () => {
   const [works, setWorks] = useState([]);
   const [filterWork, setFilterWork] = useState([]);
   const [activeFilter, setActiveFilter] = useState('All');
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
+  const isDarkMode = useSelector((state)=>state.darkmode.isDarkMode)
+
+
+  useEffect(() => {
+    const homeElement = document.querySelector(".app__works");
+    if (isDarkMode) {
+      homeElement.style.background = "#212121";
+    } else {
+      homeElement.style.background = "";
+    }
+  }, [isDarkMode]);
 
   useEffect(() => {
     // Static data for works

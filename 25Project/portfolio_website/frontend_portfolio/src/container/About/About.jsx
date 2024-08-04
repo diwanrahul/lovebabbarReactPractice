@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Images } from "../../constants";
 import "./About.scss";
-import { urlFor, client } from "../../client";
+// import { urlFor, client } from "../../client";
+import { useSelector,  } from 'react-redux'
 import { AppWrap } from "../../wrapper";
-const About = ({isDarkMode}) => {
+const About = () => {
 
   // const [abouts, setAbouts] = useState([]);
   // useEffect(() => {
@@ -21,6 +22,9 @@ const About = ({isDarkMode}) => {
     {title:"Java Development ",description:"I am Java developer", imgURL:Images.about03},
     {title:"Backend Development ",description:"I am Backend developer", imgURL:Images.about04},
   ]
+  const isDarkMode = useSelector((state)=>state.darkmode.isDarkMode)
+
+
   useEffect(() => {
     const homeElement = document.querySelector("#About");
     if (isDarkMode) {
@@ -29,6 +33,8 @@ const About = ({isDarkMode}) => {
       homeElement.style.background = "";
     }
   }, [isDarkMode]);
+
+
   return (
     <div id="About" style={{backgroundColor:isDarkMode && "#212121"}}>
       <h2 className="head-text">I know that <span>Good Development</span><br />means <span>Good Business</span></h2>

@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Images } from '../../constants';
 import { AppWrap, MotionWrap } from '../../wrapper';
 import './Footer.scss';
+import { useSelector } from 'react-redux';
 
 const Footer = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -10,6 +11,17 @@ const Footer = () => {
   const [loading, setLoading] = useState(false);
 
   const { name, email, message } = formData;
+
+  const isDarkMode = useSelector((state)=>state.darkmode.isDarkMode)
+  useEffect(() => {
+    const homeElement = document.querySelector(".app__footer");
+    if (isDarkMode) {
+      homeElement.style.background = "#212121";
+      homeElement.style.color = "#fff";
+    } else {
+      homeElement.style.background = "";
+    }
+  }, [isDarkMode]);
 
   const handleChangeInput = (e) => {
     const { name, value } = e.target;

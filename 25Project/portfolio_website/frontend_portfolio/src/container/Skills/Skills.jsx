@@ -6,10 +6,22 @@ import { AppWrap, MotionWrap } from '../../wrapper';
 // Import images statically
 import Images from '../../constants/images'; // Assuming you have a constants folder with an images file
 import './Skills.scss';
+import { useSelector } from 'react-redux';
 
 const Skills = () => {
   const [skills, setSkills] = useState([]);
   const [experiences, setExperiences] = useState([]);
+  const isDarkMode = useSelector((state)=>state.darkmode.isDarkMode)
+
+
+  useEffect(() => {
+    const homeElement = document.querySelector("#Skills");
+    if (isDarkMode) {
+      homeElement.style.background = "#212121";
+    } else {
+      homeElement.style.background = "";
+    }
+  }, [isDarkMode]);
 
   useEffect(() => {
     // Static data for skills

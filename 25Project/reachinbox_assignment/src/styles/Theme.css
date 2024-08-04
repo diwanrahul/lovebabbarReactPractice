@@ -1,0 +1,49 @@
+.light {
+    background-color: white;
+    color: black;
+  }
+  
+  .dark {
+    background-color: black;
+    color: white;
+  }
+  
+  .onebox {
+    padding: 20px;
+  }
+  
+  .threads {
+    margin-bottom: 20px;
+  }
+  
+  .thread {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  .reply-box {
+    margin-top: 20px;
+  }
+  
+  .editor-buttons {
+    margin-bottom: 10px;
+  }
+  
+  .editor-buttons button {
+    margin-right: 10px;
+    padding: 10px 20px;
+  }
+  
+  .reply-box .DraftEditor-root {
+    border: 1px solid #ccc;
+    padding: 10px;
+    min-height: 200px;
+  }
+  
+  .reply-box button {
+    margin-top: 10px;
+    padding: 10px 20px;
+  }
+  

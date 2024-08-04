@@ -1,8 +1,25 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import NavigationDots from '../components/NavigationDots'
 import SocialMedia from '../components/SocialMedia'
-const AppWrap = (Component, idName, classNames, isDarkMode) => function HOC() {
+import { useSelector, useDispatch } from 'react-redux'
+const AppWrap = (Component, idName, classNames,) => function HOC() {
+
+  const isDarkMode = useSelector((state)=>state.darkmode.isDarkMode)
+
+
+  useEffect(() => {
+    const homeElement = document.querySelector(".app__wrapper");
+    if (isDarkMode) {
+      homeElement.style.background = "#212121";
+      homeElement.style.color = "#212121";
+
+    } else {
+      homeElement.style.background = "";
+    }
+  }, [isDarkMode]);
+
   return (
+
     <div id={idName} className={`app__container ${classNames}`}>
         <SocialMedia />
 

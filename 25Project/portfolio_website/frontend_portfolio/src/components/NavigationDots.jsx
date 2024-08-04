@@ -1,6 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 const NavigationDots = ({ active }) => {
+  const isDarkMode = useSelector((state)=>state.darkmode.isDarkMode)
+
+
+  useEffect(() => {
+    const homeElement = document.querySelector(".app__navigation");
+    if (isDarkMode) {
+      homeElement.style.background = "#212121";
+    } else {
+      homeElement.style.background = "";
+    }
+  }, [isDarkMode]);
+
   return (
     <div className="app__navigation " 
     // style={{ backgroundColor: "#212121" }}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
 import { motion } from 'framer-motion';
 
@@ -6,9 +6,21 @@ import { AppWrap, MotionWrap } from '../../wrapper';
 // Import images statically
 import Images from '../../constants/images'; // Assuming you have a constants folder with an images file
 import './Testimonials.scss';
+import { useSelector } from 'react-redux';
 
 const Testimonial = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const isDarkMode = useSelector((state)=>state.darkmode.isDarkMode)
+
+
+  useEffect(() => {
+    const homeElement = document.querySelector(".app__testimonial");
+    if (isDarkMode) {
+      homeElement.style.background = "#212121";
+    } else {
+      homeElement.style.background = "";
+    }
+  }, [isDarkMode]);
 
   // Static data for testimonials
   const testimonials = [

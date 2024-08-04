@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 
 import { AppWrap } from '../../wrapper';
 import { Images } from '../../constants';
+import { useSelector, useDispatch } from 'react-redux'
 import './Header.scss';
 
 const scaleVariants = {
@@ -16,7 +17,8 @@ const scaleVariants = {
   },
 };
 
-const Header = ({ isDarkMode }) => {
+const Header = () => {
+  const isDarkMode = useSelector((state)=>state.darkmode.isDarkMode)
   useEffect(() => {
     const homeElement = document.querySelector("#Home");
     if (isDarkMode) {
