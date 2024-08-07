@@ -49,7 +49,7 @@ export default function ScrollIndicator({ url }) {
     };
   }, []);
 
-  console.log(scrollPercentage);
+  // console.log(scrollPercentage);
   useEffect(() => {
     fetchData(url);
   }, [url]);

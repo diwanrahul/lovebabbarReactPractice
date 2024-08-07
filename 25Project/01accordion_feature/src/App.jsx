@@ -19,71 +19,41 @@ import UseFetchHookTest from "./components/use-fetch/test"
 import UseWindowResizeTest from "./components/use-windowsize/test"
 import ScrollToSection from "./components/scroll-to-top-bottom"
 import Weather from "./components/weather-app/Weather"
+import {Routes, Route} from "react-router-dom"
+import Components from "./components"
+import MenuList from "./components/tree-view/menu-list"
+// import Modal from "./components/custom-modal-popup/modal"
 function App() {
   const url = "https://picsum.photos/v2/list";
 
   return (
+  
     <>
-    {/* Accordion components */}
-      {/* <Accordion /> */}
-
-      {/* Random color component */}
-        {/* <RandomColor /> */}
-
-       {/* star rating component  */}
-       {/* <StarRating noOfStars={4}/> */}
-
-       {/* image slider */}
-       {/* <ImageSlider url={url} page={"1"} limit={'10'}/> */}
-
-       {/* load more image */}
-       {/* <LoadMoreData /> */}
-
-       {/* Tree TreeView */}
-       {/* <TreeView menus={menus}/> */}
-
-       {/* QR code Generator */}
-       {/* <QRCodeGenerator /> */}
-
-       {/* light dark them */}
-       {/* <LightDarkTheme />  */}
-
-       {/* ScrollIndicator */}
-       {/* <ScrollIndicator url={'https://dummyjson.com/products?limit=100'}/> */}
-
-       {/* custom tabs component */}
-       {/* <TabTest /> */}
-
-
-       {/* custom modal components */}
-       {/* <ModalTest /> */}
-
-       {/* github profile GithubProfileFinder */}
-
-       {/* <GithubProfileFinder /> */}
-
-        {/* searchn functionaliy */}
-        {/* <SearchAutocomplete /> */}
-
-
-        {/* tiktaktoe game */}
-        {/* <TikTacToe /> */}
-
-
-        {/* custom hooks */}
-        {/* <UseFetchHookTest /> */}
-
-        {/* window resize hook */}
-        {/* <UseWindowResizeTest /> */}
-
-        {/* scroll to a section */}
-        {/* <ScrollToSection /> */}
-
-        {/* Weather app */}
-        <Weather /> 
-
-
+    
+      <Routes>
+        
+        <Route path="/" element={<Components />} />
+        <Route path="/accordion" element={<Accordion />} />
+        <Route path="/weather" element={<Weather />} />
+        <Route path="/scrolltosection" element={<ScrollToSection />} />
+        <Route path="/usewindowresizetest" element={<UseWindowResizeTest />} />
+        <Route path="/usefetchhooktest" element={<UseFetchHookTest />} />
+        <Route path="/tiktaktoe" element={<TikTacToe />} />
+        <Route path="/searchautocomplete" element={<SearchAutocomplete />} />
+        <Route path="/githubprofilefinder" element={<GithubProfileFinder />} />
+        <Route path="/modaltest" element={<ModalTest />} />
+        <Route path="/starrating" element={<StarRating />} />
+        <Route path="/tabtest" element={<TabTest />} />
+        <Route path="/scrollindicator" element={<ScrollIndicator url={'https://dummyjson.com/products?limit=100'} />} />
+        <Route path="/lightdarktheme" element={<LightDarkTheme />} />
+        <Route path="/grcodegenerator" element={<QRCodeGenerator />} />
+        <Route path="/treeview" element={<TreeView menus={menus}/>} />
+        <Route path="/randomcolor" element={<RandomColor />} />
+        <Route path="/imageslider" element={<ImageSlider />} />
+        <Route path="/loadmoredata" element={<LoadMoreData />} />
+      </Routes>
     </>
+ 
   )
 }
 

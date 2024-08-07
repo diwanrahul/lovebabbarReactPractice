@@ -29,21 +29,14 @@ const Work = () => {
     // Static data for works
     const staticWorks = [
       {
-        title: 'Project One',
-        description: 'Description for Project One',
+        title: 'Minor Projects Combo',
+        description: 'Recat minor project for practice purpose',
         imgUrl: Images.about02,
-        projectLink: 'http://projectone.com',
-        codeLink: 'http://github.com/projectone',
-        tags: ['UI/UX', 'Web App']
+        projectLink: 'https://reactminorproject.netlify.app/',
+        codeLink: 'https://github.com/diwanrahul/minor-projects',
+        tags: ['Web App']
       },
-      {
-        title: 'Project Two',
-        description: 'Description for Project Two',
-        imgUrl: Images.about01,
-        projectLink: 'http://projecttwo.com',
-        codeLink: 'http://github.com/projecttwo',
-        tags: ['Mobile App', 'React JS']
-      },
+      
       // Add more projects as needed
     ];
 

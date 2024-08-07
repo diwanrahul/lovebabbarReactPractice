@@ -5,19 +5,21 @@ const Header = () => {
     <div
     id='Home'
     className='h-[100vh] flex justify-around'>
-        <div className='flex flex-col justify-center gap-3 bg-red-500 w-[25%]'>
-            <div className='flex gap-2 px-4 py-2 bg-slate-300 rounded-md shadow-xl  w-[60%] h-[15vh]'>
-                    <span>🙌</span>
+        <div className='flex flex-col  gap-10 bg-red-500 w-[25%]'>
+            <div className='flex gap-3 px-4 py-2 bg-slate-300 rounded-md shadow-xl mt-[8vh] ml-[5vw] w-[65%] h-[15vh]'>
+                    <span className='text-5xl'>👋</span>
                     <div>
-                        <p>Hello, I am </p>
-                        <h1>Rahul</h1>
+                        <p className='text-md'>Hello, I am </p>
+                        <h1 className='text-[2.5rem] font-semibold'>Rahul</h1>
                     </div>
             </div>
-
-            <div className='flex gap-2 px-4 py-2 bg-slate-300 rounded-lg shadow-lg flex-col w-[40%] justify-end'>
+<div className='flex justify-end'>
+  <div className='flex gap-2 px-4 py-2 bg-slate-300 rounded-lg shadow-lg flex-col w-[40%] '>
                     <p>Web Developer</p>
                     <p>Freelancer</p>
             </div>
+</div>
+            
         </div>
         <div>
             <img src="../../assets/profile1.png" alt="profile-picture" />

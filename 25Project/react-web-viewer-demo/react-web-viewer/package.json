@@ -17,6 +17,7 @@
     "force": "^0.0.3",
     "logging-library": "^0.5.0",
     "msdoc-reader": "^1.0.0",
+    "pdfjs-dist": "^4.4.168",
     "pspdfkit": "^2024.4.0",
     "react": "^18.2.0",
     "react-doc-viewer": "^0.1.11",
@@ -26,6 +27,7 @@
     "react-iframe": "^1.8.5",
     "react-office-previewer": "^1.0.16",
     "react-office-viewer": "^1.0.4",
+    "react-pdf": "^9.1.0",
     "react-pptx": "^2.20.1",
     "react-viewer": "^3.2.2"
   },
