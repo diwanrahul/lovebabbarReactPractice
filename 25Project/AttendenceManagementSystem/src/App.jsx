@@ -6,6 +6,7 @@ import Login from './components/auth/Login'
 import Register from './components/auth/register/Register'
 import Attendancepage from './components/pages/Attendancepage'
 import Home from './components/pages/Home'
+import PDFViewer from "@diwanrahul419/reactpdfviewer"
 
 function App() {
  
@@ -13,6 +14,7 @@ function App() {
   return (
     <>
       <Navbar />
+      <PDFViewer fileUrl="sirpptx_compressed.pdf" />
     <Routes>
       <Route path='/'>
       <Route exact path='/' Component={Home}/>

@@ -1,13 +1,13 @@
-import React from 'react'
-import HtmlComponent from './HtmlComponent'
+import React from 'react';
+import PDFViewer from './PDFViewer';
 
-const App = () => {
-  return (
-    <div>
-      <HtmlComponent url="/input.html" />
-
-    </div>
-  )
+function App() {
+    return (
+        <div className="App">
+            <h1>Custom PDF Viewer</h1>
+            <PDFViewer fileUrl={`1MB_compressed.pdf`} />
+        </div>
+    );
 }
 
-export default App
+export default App;
