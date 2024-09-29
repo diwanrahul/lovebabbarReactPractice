@@ -8,13 +8,14 @@ import Footer from './sections/footer/Footer'
 import Experience from './sections/experiences/Experience'
 import PaginatedHtml from './sections/PaginatedHtml'
 import Blogs from './sections/Blogs/Blogs'
+import Login from './components/login/Login'
 
 const App = () => {
   return (
     <div>
       <Navbar />
       {/* <PaginatedHtml /> */}
-      
+      <Login />
       <Header />
       <About />
       <Blogs />
@@ -22,6 +23,8 @@ const App = () => {
       <Experience />
       <Project />
       <Footer />
+
+      
     </div>
   )
 }

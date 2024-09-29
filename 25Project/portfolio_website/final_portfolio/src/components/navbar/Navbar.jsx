@@ -19,6 +19,9 @@ const Navbar = () => {
         }
         </div>
         <div>
+           <a href='/login'>Login</a>
+        </div>
+        <div>
             Darkmode
         </div>
     </div>
