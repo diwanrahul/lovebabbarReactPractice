@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
+import axios from 'axios';
 
 const Create = () => {
+  const csrf = ()=> axios.get('/sanctum/csrf-cookie');
+
     const [formData, setFormData] = useState({
         name:"",
         email:"",
@@ -15,19 +18,16 @@ const Create = () => {
     }
     const submitForm = async (e)=>{
         e.preventDefault();
+        await csrf();
         const response = await fetch('/users', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
             },
-            body: JSON.stringify({
-              name: formData.name,
-              email: formData.email,
-              password: formData.password,
-             }),
+            body: formData
           });
         
-          const data = await response.json();
+          const data = await response.text();
           console.log(data);
     }
     
